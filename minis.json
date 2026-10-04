@@ -1,19 +1,5 @@
 [
   {
-    "name": "Skeleton Knight",
-    "date": "2026-10-04",
-    "tags": [
-      "Player character",
-      "Monster",
-      "Medium"
-    ],
-    "size": "28mm",
-    "supports": "Medium",
-    "photo": "photos/skeleton-knight.jpg",
-    "tiktok": "",
-    "stl": "stl/skeleton-knight.stl"
-  },
-  {
     "name": "Dwarf Cleric",
     "date": "2026-10-03",
     "tags": [
