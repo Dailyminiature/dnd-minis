@@ -1,5 +1,18 @@
 [
   {
+    "name": "Satyr Bard",
+    "date": "2026-10-04",
+    "tags": [
+      "Player character",
+      "Medium"
+    ],
+    "size": "28mm",
+    "supports": "Medium",
+    "photo": "photos/satyr-bard.jpg",
+    "tiktok": "",
+    "stl": "stl/satyr-bard.stl"
+  },
+  {
     "name": "Skeleton Knight",
     "date": "2026-10-04",
     "tags": [
