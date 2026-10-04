@@ -38,18 +38,5 @@
     "photo": "",
     "tiktok": "",
     "stl": "stl/dwarf-cleric.stl"
-  },
-  {
-    "name": "Treasure Mimic",
-    "date": "2026-10-02",
-    "tags": [
-      "Monster",
-      "Medium"
-    ],
-    "size": "32mm",
-    "supports": "None",
-    "photo": "",
-    "tiktok": "",
-    "stl": "stl/treasure-mimic.stl"
   }
 ]
