@@ -1,0 +1,5 @@
+[
+  {"name":"Skeleton Knight","date":"2026-10-04","tags":["Player character","Medium"],"size":"28mm","supports":"Light","photo":"","tiktok":"","stl":"stl/skeleton-knight.stl"},
+  {"name":"Dwarf Cleric","date":"2026-10-03","tags":["Player character","Medium"],"size":"28mm","supports":"Medium","photo":"","tiktok":"","stl":"stl/dwarf-cleric.stl"},
+  {"name":"Treasure Mimic","date":"2026-10-02","tags":["Monster","Medium"],"size":"32mm","supports":"None","photo":"","tiktok":"","stl":"stl/treasure-mimic.stl"}
+]
