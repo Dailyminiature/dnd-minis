@@ -25,18 +25,5 @@
     "photo": "photos/skeleton-knight.jpg",
     "tiktok": "",
     "stl": "stl/skeleton-knight.stl"
-  },
-  {
-    "name": "Dwarf Cleric",
-    "date": "2026-10-03",
-    "tags": [
-      "Player character",
-      "Medium"
-    ],
-    "size": "28mm",
-    "supports": "Medium",
-    "photo": "",
-    "tiktok": "",
-    "stl": "stl/dwarf-cleric.stl"
   }
 ]
