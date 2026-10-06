@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My D&D Miniature Library </title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceef2;--card:#fff;--ink:#1c2230;--mute:#5d6577;--line:#d3d7df;--acc:#d9421f;--acc-ink:#fff;--chip:#dfe3ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--card:#1e2330;--ink:#eef0f5;--mute:#9aa3b5;--line:#2f3647;--acc:#ff6a45;--acc-ink:#14171f;--chip:#2a3042}}
+:root[data-theme="dark"]{--bg:#14171f;--card:#1e2330;--ink:#eef0f5;--mute:#9aa3b5;--line:#2f3647;--acc:#ff6a45;--acc-ink:#14171f;--chip:#2a3042}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.45}
+main{max-width:560px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:2rem;font-weight:800;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--mute);margin:0 0 20px}
+.how{display:flex;gap:8px;margin:0 0 20px;padding:0;list-style:none;font-size:.85rem;color:var(--mute)}
+.how li{flex:1;border-top:3px solid var(--acc);padding-top:6px}
+input[type=search]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 18px}
+.chip{border:0;background:var(--chip);color:var(--ink);padding:6px 12px;border-radius:99px;font:inherit;font-size:.85rem;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.pic{aspect-ratio:4/3;background:var(--chip);display:grid;place-items:center;font-size:4rem}
+.pic img{width:100%;height:100%;object-fit:cover}
+.body{padding:14px 16px 16px}
+.body h2{margin:0;font-size:1.2rem}
+.meta{color:var(--mute);font-size:.85rem;margin:2px 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{flex:1;text-align:center;padding:11px 8px;border-radius:9px;font-weight:600;text-decoration:none;font-size:.95rem;border:1px solid var(--line);color:var(--ink)}
+.btn.main{background:var(--acc);color:var(--acc-ink);border-color:var(--acc);flex-basis:100%;order:-1}
+.btn:focus-visible,.chip:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.empty{color:var(--mute);text-align:center;padding:32px 0}
+footer{color:var(--mute);font-size:.8rem;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<main>
+  <h1>My D&amp;D Miniature Library, one new mini every day!</h1>
+  <p class="sub">Every mini is designed, printed and tested on camera. Watch the build, then download the STL and print your own.</p>
+  <ol class="how"><li>Watch the build</li><li>Download the STL</li><li>Print it for free</li></ol>
+  <input type="search" id="q" placeholder="Search minis (goblin, tavern, dragon…)" aria-label="Search minis">
+  <div class="chips" id="chips"></div>
+  <div id="list"></div>
+  <footer>Free for personal tabletop use. Not for resale.</footer>
+</main>
+<script>
+/* The library now loads from minis.json. Use admin.html to add minis, no editing needed here. */
+const $=s=>document.querySelector(s);
+let MINIS=[],active="All";
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function chips(){
+  const tags=[...new Set(MINIS.flatMap(m=>m.tags))].sort();
+  $('#chips').innerHTML=["All",...tags].map(t=>`<button class="chip" aria-pressed="${t===active}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{active=b.dataset.t;chips();render()});
+}
+function render(){
+  const q=$('#q').value.trim().toLowerCase();
+  const rows=MINIS.filter(m=>(active==="All"||m.tags.includes(active))&&(m.name+" "+m.tags.join(" ")).toLowerCase().includes(q));
+  $('#list').innerHTML=rows.length?rows.map(m=>`
+    <article class="card">
+      <div class="pic">${m.photo?`<img src="${esc(m.photo)}" alt="Printed ${esc(m.name)} miniature" loading="lazy">`:"🎲"}</div>
+      <div class="body">
+        <h2>${esc(m.name)}</h2>
+        <p class="meta">${esc(m.tags.join(", "))}. ${esc(m.size)} scale, supports: ${esc(m.supports)}. Posted ${esc(m.date)}.</p>
+        <div class="btns">
+          ${m.tiktok?`<a class="btn" href="${esc(m.tiktok)}" target="_blank" rel="noopener">Watch on TikTok</a>`:""}
+          ${m.youtube?`<a class="btn" href="${esc(m.youtube)}" target="_blank" rel="noopener">Watch on YouTube</a>`:""}
+          <a class="btn main" href="${esc(m.stl)}" download rel="noopener">Download STL</a>
+        </div>
+      </div>
+    </article>`).join(''):`<p class="empty">No minis match that search yet. Try another word or clear the filter.</p>`;
+}
+$('#q').oninput=render;
+fetch('minis.json?'+Date.now()).then(r=>r.json()).then(d=>{
+  MINIS=d.sort((a,b)=>b.date.localeCompare(a.date));chips();render();
+}).catch(()=>{$('#list').innerHTML='<p class="empty">Could not load the library. Refresh to try again.</p>'});
+</script>
+</body>
+</html>
