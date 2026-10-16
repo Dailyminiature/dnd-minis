@@ -1,5 +1,19 @@
 [
   {
+    "name": "Dwarf Wizard",
+    "date": "2026-10-16",
+    "tags": [
+      "Medium",
+      "Player Character"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/dwarf-wizard.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/DNg7JadNYcQ",
+    "stl": "stl/dwarf-wizard.stl"
+  },
+  {
     "name": "Satyr Bard",
     "date": "2026-10-04",
     "tags": [
