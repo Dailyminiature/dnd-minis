@@ -1,5 +1,19 @@
 [
   {
+    "name": "Rogue_WanderingTrader",
+    "date": "2026-10-17",
+    "tags": [
+      "Medium",
+      "Player character"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/rogue-wanderingtrader.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/p4KEhLq33uw",
+    "stl": "stl/rogue-wanderingtrader.stl"
+  },
+  {
     "name": "Dwarf Wizard",
     "date": "2026-10-16",
     "tags": [
