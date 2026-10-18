@@ -1,5 +1,20 @@
 [
   {
+    "name": "Skeleton Necromancer",
+    "date": "2026-10-18",
+    "tags": [
+      "Medium",
+      "Player character",
+      "Monster"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/skeleton-necromancer.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/4LlU1mPlMS8",
+    "stl": "stl/skeleton-necromancer.stl"
+  },
+  {
     "name": "Rogue_WanderingTrader",
     "date": "2026-10-17",
     "tags": [
