@@ -1,5 +1,19 @@
 [
   {
+    "name": "Drunken Dwarf Monk",
+    "date": "2026-10-19",
+    "tags": [
+      "Medium",
+      "Player character"
+    ],
+    "size": "28mm",
+    "supports": "Medium",
+    "photo": "photos/drunken-dwarf-monk.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/h1z0W7S2xTs",
+    "stl": "stl/drunken-dwarf-monk.stl"
+  },
+  {
     "name": "Skeleton Necromancer",
     "date": "2026-10-18",
     "tags": [
