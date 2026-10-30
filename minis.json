@@ -1,5 +1,21 @@
 [
   {
+    "name": "Thaumaturge Human",
+    "date": "2026-10-30",
+    "tags": [
+      "Player character",
+      "Human",
+      "Female",
+      "Medium"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/thaumaturge-human.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/3Z-OG1eYbiY",
+    "stl": "stl/thaumaturge-human.stl"
+  },
+  {
     "name": "Drunken Dwarf Monk",
     "date": "2026-10-19",
     "tags": [
