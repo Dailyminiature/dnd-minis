@@ -1,5 +1,20 @@
 [
   {
+    "name": "Dwarf Paladin",
+    "date": "2026-10-30",
+    "tags": [
+      "Player character",
+      "medium",
+      "small"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/dwarf-paladin.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/XxP5seUUVAY",
+    "stl": "stl/dwarf-paladin.stl"
+  },
+  {
     "name": "Thaumaturge Human",
     "date": "2026-10-30",
     "tags": [
