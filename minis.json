@@ -1,5 +1,19 @@
 [
   {
+    "name": "Drow Ranger",
+    "date": "2026-10-31",
+    "tags": [
+      "Medium",
+      "Player character"
+    ],
+    "size": "28mm",
+    "supports": "None",
+    "photo": "photos/drow-ranger.jpg",
+    "tiktok": "",
+    "youtube": "https://www.youtube.com/shorts/L8UnB8EwEfs",
+    "stl": "stl/drow-ranger.stl"
+  },
+  {
     "name": "Dwarf Paladin",
     "date": "2026-10-30",
     "tags": [
